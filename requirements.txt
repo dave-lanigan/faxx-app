@@ -1,0 +1,6 @@
+fastapi
+jinjax
+fastapi-htmx
+uvicorn
+jinja2
+sqlmodel
