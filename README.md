@@ -7,7 +7,7 @@ This is a concept application stack that leverages [HTMX](https://htmx.org/) and
 
 Utilizing HTMX and JinjaX, Python developers can create web performant applications without having to learn JavaScript and thereby avoiding clunky and slow Python UI frameworks.
 
-This template also uses uses [daisyUI](https://daisyui.com/components/swap/) for CSS, [lucia](https://lucia-auth.com/) for authentication and [SQLModel](https://sqlmodel.tiangolo.com/) for the database ORM.
+This template also uses uses [daisyUI](https://daisyui.com/components/swap/) for CSS and [SQLModel](https://sqlmodel.tiangolo.com/) for the database ORM.
 
 ## Try ithttps://sqlmodel.tiangolo.com/
 ```bash
