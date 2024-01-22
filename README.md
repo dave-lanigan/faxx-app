@@ -3,7 +3,7 @@
 _Create Web Apps without JavaScript or clunky Python UI Frameworks_
 
 ## About
-The FaXX stack leverages [HTMX](https://htmx.org/) and Jinja2 via components using [JinjaX](https://jinjax.scaletti.dev/) to create a hypermedia based Python app with a [FastAPI](https://fastapi.tiangolo.com/) backend.
+This is a concept application stack that leverages [HTMX](https://htmx.org/) and Jinja2 via components using [JinjaX](https://jinjax.scaletti.dev/) to create a hypermedia based Python app with a [FastAPI](https://fastapi.tiangolo.com/) backend.
 
 Utilizing HTMX and JinjaX, Python developers can create web performant applications without having to learn JavaScript and thereby avoiding clunky and slow Python UI frameworks.
 
