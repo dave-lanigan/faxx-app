@@ -4,3 +4,6 @@ fastapi-htmx
 uvicorn
 jinja2
 sqlmodel
+pydantic[email]
+nltk
+pydantic-settings

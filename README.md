@@ -1,19 +1,15 @@
 # FaXX App
-The FaXX stack leverages HTMX and Jinja with components using JinjaX to create hypermedia based Python Applications with a FastAPI backend. The choice of using Turso is based mostly on a generous free tier and the fact is pretty interested tech.
 
-Want to 
+Create Web Apps without JavaScript or clunky Python UI Frameworks
 
-## Tech
-- [htmx]()
-- [jinjax](https://jinjax.scaletti.dev/)
-- [fastapi-htmx](https://github.com/maces/fastapi-htmx)
-- [fastapi]
-- [PantherDB]
-- [TursoDB]
+## About
+The FaXX stack leverages HTMX(https://htmx.org/) and Jinja with components using [JinjaX](https://jinjax.scaletti.dev/) to create hypermedia based Python Applications with a [FastAPI](https://fastapi.tiangolo.com/) backend.
 
-Other API Frameworks: 
-- [panther]
-- [muffin]
-- [blacksheep]
+Utilizing HTMX and JinjaX, Python developers can create web performant applications without having to learn JavaScript and thereby avoiding clunky and slow Python UI frameworks.
 
-[daisyUI](https://daisyui.com/components/swap/)https://daisyui.com/components/swap/
+This template also uses uses [daisyUI](https://daisyui.com/components/swap/) for CSS.
+
+## Try it
+```bash
+make launch-dev
+```

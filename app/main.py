@@ -1,25 +1,62 @@
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from pathlib import Path
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Header
 from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi_htmx import htmx, htmx_init
 from jinjax import Catalog
 
+from typing import Optional
+
+from .models import HTMLTag
+
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI()
+
+nltk.download('vader_lexicon')
+
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 catalog = Catalog()
 catalog.add_folder("app/components")
 
-htmx_init(templates=Jinja2Templates(directory=Path("app") / "templates"))
-
 @app.get("/", response_class=HTMLResponse)
-#@htmx("index", "index")
 async def index(request: Request):
-    #return {"greeting": "Hello World"}
-    return catalog.render("Layout", title="Hello world", __content="TEST")
+    return catalog.render("AppCard", app_name="Sentiment Analyzer")
 
-@app.get("/customers", response_class=HTMLResponse)
-@htmx("customers")
-async def get_customers(request: Request):
-    return {"customers": ["John Doe", "Jane Doe"]}
+
+@app.get("/inference")
+async def get_inference(request: Request, text: str):
+    sid = SentimentIntensityAnalyzer()
+    scores = sid.polarity_scores(text)
+    print(scores)
+    return scores
+
+
+@app.post(
+    "/inference",
+    response_class=HTMLResponse,
+)
+async def get_inference(
+    body: dict,
+    hx_request: Optional[str] = Header(None),
+    ):
+    
+    text = body["text"].strip()
+    sid = SentimentIntensityAnalyzer()
+    scores = sid.polarity_scores(text)
+    score = scores["compound"]
+    print(scores)
+    
+    if score > 0.5:
+        emoji = "smile"
+    elif score > -0.5:
+        emoji = "meh"
+    else:
+        emoji = "frown"
+
+    classes = ["fa-regular", f"fa-face-{emoji}", "text-6xl","text-red-300"]
+    tag = HTMLTag(tag="i", classes=classes)
+    return tag.dumps()

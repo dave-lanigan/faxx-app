@@ -1,0 +1,28 @@
+{#def app_name #}
+
+<App app_name="{{ app_name }}">
+  <div class="card shadow-xl w-1/2 h-1/2 max-w-xl border border-solid border-blue-300">
+      
+      <div class="flex flex-col justify-center items-center m-7">
+        <h1 class="text-4xl font-medium text-blue-600 m-1">{{ app_name }}</h1>
+        <h1 class="text-xl font-medium text-red-400">Example FaXX Mini App</h1>
+      </div>
+
+      <div class="card-body">
+          <textarea 
+            class="textarea textarea-primary textarea-md w-full max-h-56 text-base"
+            placeholder="Start typing here ..."
+            
+            hx-post="/inference"
+            hx-trigger="keyup changed delay:500ms"
+            hx-target="#result"
+            hx-swap="innerHTML"
+            hx-ext="json-enc"
+
+            name="text"
+          ></textarea>
+      </div>
+
+      <div id="result" class="flex justify-center items-center m-6 my-10"></div>
+  </div>
+</App>
