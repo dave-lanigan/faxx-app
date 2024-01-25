@@ -9,7 +9,7 @@ Utilizing HTMX and JinjaX, Python developers can create web performant applicati
 
 This template also uses uses [daisyUI](https://daisyui.com/components/swap/) for CSS and [SQLModel](https://sqlmodel.tiangolo.com/) for the database ORM.
 
-## Try ithttps://sqlmodel.tiangolo.com/
+## Try it
 ```bash
 pip install -r requirements.txt
 ```
