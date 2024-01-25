@@ -12,8 +12,6 @@ from .models import HTMLTag
 
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI()
-
 nltk.download('vader_lexicon')
 
 app = FastAPI()
